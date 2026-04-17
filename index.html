@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>OTT777</title>
+  <link rel="icon" type="image/png" href="https://versionobj.ecoassetsservice.com/v98/static/front/img/fav-icons/fav-icon.png">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap">
+  <link href="./assets/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="./assets/style.css">
+  <link rel="stylesheet" href="./assets/responsive.css">
+  <link rel="stylesheet" href="./assets/custom.css">
+  <link rel="stylesheet" href="./assets/theme.css">
+  <style>
+    /* === dfont icon font (local override) === */
+    @font-face {
+      font-family: "dfont";
+      src: url("./assets/dfont.eot");
+      src: url("./assets/dfont.eot") format("embedded-opentype"),
+           url("./assets/dfont.ttf") format("truetype"),
+           url("./assets/dfont.woff") format("woff"),
+           url("./assets/dfont.svg") format("svg");
+      font-weight: normal;
+      font-style: normal;
+      font-display: block;
+    }
+
+    /* === MY22 Logo === */
+    .my22-logo {
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+      max-height: 65px;
+    }
+    .my22-logo-icon {
+      height: 40px;
+      width: 40px;
+      margin-right: 6px;
+    }
+    .my22-logo-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1;
+    }
+    .my22-logo-main {
+      font-family: 'Roboto Condensed', sans-serif;
+      font-size: 36px;
+      font-weight: 900;
+      background: linear-gradient(180deg, #FFD700, #FFA500);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: 2px;
+    }
+    .my22-logo-sub {
+      font-family: 'Roboto Condensed', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      color: #ffffff;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      margin-top: -2px;
+    }
+
+    /* Casino cards use real CDN images via inline background-image */
+
+    /* === Sidebar backdrop overlay for mobile === */
+    .sidebar-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.6);
+      z-index: 99;
+    }
+    .sidebar-overlay.active {
+      display: block;
+    }
+
+    /* Latest event items blink like original */
+
+    /* === Demo button highlight === */
+    .btn-demo {
+      background: #28a745 !important;
+      color: #fff !important;
+    }
+
+    /* Fix #floater to stay fixed on scroll */
+    #floater {
+      position: fixed !important;
+    }
+
+    /* === Footer — match reference screenshot exactly === */
+    .footer .footer-top {
+      display: flex !important;
+      flex-wrap: nowrap !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      padding: 4px 8px !important;
+    }
+    .footer .footer-links {
+      flex: 0 0 auto !important;
+      width: auto !important;
+    }
+    .footer .footer-links .navbar-nav {
+      flex-direction: row !important;
+    }
+    .footer .footer-links .nav-link {
+      color: #fff !important;
+      font-weight: bold !important;
+      font-size: 14px !important;
+      padding: 4px 8px !important;
+      text-decoration: none !important;
+    }
+    .footer .support-detail {
+      flex: 1 1 auto !important;
+      width: auto !important;
+      text-align: center !important;
+      margin-top: 0 !important;
+    }
+    .footer .support-detail h2 {
+      font-size: 22px;
+      margin: 0;
+    }
+    .footer .support-detail p {
+      display: none;
+    }
+    .footer .social-icons-box {
+      flex: 0 0 auto !important;
+      width: auto !important;
+      justify-content: flex-end !important;
+      margin-top: 0 !important;
+      position: relative !important;
+    }
+    .footer .social-icon {
+      height: 36px !important;
+      width: 36px !important;
+      border-radius: 50% !important;
+      background: #25D366 !important;
+      overflow: hidden !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+    }
+    .footer .social-icon a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      width: 100%;
+    }
+    .footer .social-icon img {
+      height: 22px !important;
+      width: 22px !important;
+      object-fit: contain;
+      filter: brightness(0) invert(1);
+    }
+
+    /* White bottom section */
+    .my22-footer-bottom-section {
+      background: #fff;
+      color: #333;
+      padding: 10px 15px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .my22-footer-bottom-section .ssl-info {
+      display: flex;
+      align-items: center;
+    }
+    .my22-footer-bottom-section .ssl-info img {
+      height: 45px;
+      margin-right: 8px;
+    }
+    .my22-footer-bottom-section .ssl-info strong {
+      font-size: 14px;
+    }
+    .my22-footer-bottom-section .ssl-info small {
+      font-size: 12px;
+      color: #555;
+    }
+    .my22-footer-bottom-section .cert-icons {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .my22-footer-bottom-section .cert-icons img {
+      height: 32px;
+      width: 32px;
+      object-fit: contain;
+    }
+
+    /* Welcome + copyright */
+    .my22-footer-copyright {
+      background: #fff;
+      color: #333;
+      text-align: center;
+      padding: 8px 15px 15px;
+    }
+    .my22-footer-copyright p {
+      margin: 2px 0;
+      font-size: 14px;
+    }
+
+    /* Make betting odds bold */
+    .bet-odd {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<div id="root">
+  <div class="wrapper login-wrapper">
+
+    <!-- WhatsApp Floater -->
+    <div id="floater">
+      <div><a href="#" target="_blank"><img src="./assets/whatsapp.png" alt="WhatsApp"></a></div>
+    </div>
+
+    <!-- Sidebar Overlay (mobile) -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- HEADER -->
+    <section class="header">
+      <div class="header-top">
+        <div class="logo-header">
+          <a class="d-xl-none" href="#" id="sidebarToggle"><i class="fas fa-bars me-2"></i></a>
+          <a href="#" class="my22-logo">
+            <img src="./assets/logo-original.png" alt="OTT 777 Exchange" style="height: 65px; width: auto; object-fit: contain;">
+          </a>
+        </div>
+        <div class="user-details login-btn-box">
+          <div class="user-name d-flex dropdown ms-3">
+            <div class="d-flex me-1">
+              <button type="button" class="btn-home-login btn-demo">Demo</button>
+              <a class="btn-home-login" href="#">Login</a>
+            </div>
+            <a class="btn-home-login" href="#">Register</a>
+          </div>
+        </div>
+        <div class="news">
+          <marquee scrollamount="3">Newly Launched Matka Market In Our Exchange</marquee>
+        </div>
+      </div>
+
+      <div class="header-bottom d-none d-xl-block">
+        <nav class="navbar navbar-expand">
+          <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Cricket</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Tennis</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Football</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Table Tennis</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Baccarat</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">32 Cards</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Teenpatti</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Poker</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Lucky 7</a></li>
+            <li class="nav-item aviator">
+              <a class="nav-link" href="#">
+                <svg id="Layer_2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 457.6 277.4" style="height:20px;width:auto;">
+                  <defs><style>.cls-1{fill:#e40539;}</style></defs>
+                  <g id="Layer_1-2"><g>
+                    <path class="cls-1" d="M61.85,273.4c-1.8-3.5-2.3-3.9-4-3-3.2,1.7-5.5,1.1-9-2.5l-3.3-3.4,4.4-1.9c2.4-1.1,8-2.2,12.4-2.6,27.1-2.5,84.1-19.2,161-47.1,32.1-11.7,80.4-30.1,81.3-31,1.2-1.2-1-1.5-11.9-1.7-10.6-.2-11.7,0-16.5,2.4-13.1,6.8-74.6,31.2-92.8,36.7l-6.9,2.1-6.4-5-6.5-4.9-3.6,1.5c-21.3,9-88,36.4-89.2,36.6-1,.2-1.6-.6-1.8-2.3-.3-2.4.5-3,7.8-6.9,4.5-2.3,7.9-4.5,7.5-4.8-.3-.4-4.3-.9-8.9-1.3-9.7-.8-17.3-4-28.2-11.9-4.8-3.5-7.8-5-10-5-4.3,0-6.4.9-6.4,2.7,0,.8,6.8,8.7,15.1,17.6,13,13.7,14.9,16.2,13.3,16.8-3.7,1.5-4.8.8-16.3-10.3-6.4-6.2-14.6-14.2-18.3-17.7l-6.7-6.5-8.8,4.2-8.8,4.2-.3-3.4c-.2-2,.2-4.4.8-5.5s6.5-4.8,13.1-8.2c11.8-6,14.2-8,12.2-10-.7-.7-4.1.5-10.2,3.5l-9.1,4.6v-2.5c0-2,1.4-3.3,7.7-7,10.3-6,17.3-8.1,22.3-6.6,2.1.6,10.7,6.3,19.1,12.6,19,14.3,29.4,19.9,35.9,19.2,5.3-.5,34-13.7,61.9-28.5,18.3-9.7,21.6-12.1,19.5-14.2-.7-.7-7.1,1.8-21.4,8.5-14.7,7-20.5,9.3-21.1,8.4-1.2-2-.1-3.3,5.6-6.3,3-1.6,5.5-3.4,5.5-4,0-.7-1.3-2.5-2.8-4l-2.9-2.7-19.8,9.6c-10.9,5.2-20,9.3-20.2,9.1-.8-.7,2.5-12.8,3.8-14.1.8-.8,9.5-5.6,19.4-10.8,17.7-9.4,18-9.6,17.8-12.7,0-1.7-.4-3.4-.7-3.7s-3.9.9-8,2.7l-7.4,3.3-8.9-9.3c-4.8-5.1-8.9-9.6-9.1-10-.5-1.4,8.8-7.9,14.6-10.1,10.4-4,10.9-3.9,118.5,11.3,35.6,5,65.5,9.7,66.5,10.4,1.6,1.1,1.6,1.4-.1,4.8l-1.7,3.7,2.8,1c1.5.5,5.8,2.1,9.5,3.6l6.9,2.5,10.1-4.3c12.4-5.2,32.9-15.6,45.6-23.2l9.4-5.5,3.2,2.4c3.2,2.4,6.9,3.1,7.9,1.6.3-.5-2.5-6.9-6.3-14.3-3.7-7.4-8.7-18.4-11-24.4-2.4-6.1-4.8-11.6-5.4-12.4-.9-1-3.3-1.2-10.7-.8-10.8.5-18.1,2.6-42,12-15.4,6-67.7,31.5-70.6,34.4-1.3,1.4-3.4,1.4-19.2-.1-9.7-.9-18-1.6-18.4-1.6-1.4,0-.8-5.5,1.1-9.7,1.6-3.4,3.9-5.4,14-12.1,14.3-9.5,28.2-16.5,37.4-18.9l6.5-1.7,9.9,3.9c14.3,5.6,16.3,5.6,39.8-1,38.2-10.6,43.5-11.8,52.2-11.9,8-.1,8.3,0,11.6,3.3,2.6,2.5,5.7,8.3,12,23,4.7,10.8,9,21.3,9.7,23.5,1.7,5.4.8,11.9-2.4,16-6.7,8.8-38,25.2-82.1,42.8-22.8,9.1-61.8,21.9-162.5,53.3-31.1,9.7-64.7,20.3-74.6,23.6-10,3.2-18.9,5.9-19.8,5.9-.8,0-2.5-1.8-3.6-4Z"/>
+                    <path class="cls-1" d="M440.55,196.2c-6.8-10.1-13.5-20.3-14.9-22.8-1.5-2.5-5.5-14.1-9.1-25.7l-6.5-21.3,5.1-5c2.7-2.8,5.1-4.9,5.2-4.8.1.2,5.2,9.4,11.4,20.6,11.9,21.3,15.8,31,23.1,58,3.3,11.9,3.3,12.3,1.7,15.7-.9,1.9-2.1,3.5-2.6,3.5s-6.5-8.2-13.4-18.2h0Z"/>
+                    <path class="cls-1" d="M295.35,148.3c-13.2-2.6-24.6-4.9-25.4-5.1-.8-.2,11.3-5.4,27-11.6l28.3-11.4,5.3,5.9c2.9,3.2,5.2,6.3,5.3,6.9,0,.6-2.3,5.5-5.1,10.8-4.8,9.1-5.2,9.6-8.2,9.5-1.8-.1-14-2.3-27.2-5h0Z"/>
+                    <path class="cls-1" d="M404.75,114.7c-7.2-16.1-7.3-16.4-5.8-17.5,1.5-1,21.2-.4,24.2.7.9.4,1.7,1.4,1.7,2.2,0,4.2-12.6,21.3-15.6,21.3-.9,0-2.8-2.9-4.5-6.7h0Z"/>
+                    <path class="cls-1" d="M385.05,75.9c-10.7-19.1-14-27.3-20.7-51.6-4-14.3-4.3-18.7-1.6-22l1.9-2.3,14.8,22.3,14.8,22.3,7.6,24.2c4.2,13.2,7.4,24.2,7.1,24.3-.3.1-3.5.3-7.1.6l-6.5.4-10.3-18.2h0Z"/>
+                  </g></g>
+                </svg>
+                <span class="ms-1">Crash</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </section>
+
+    <!-- MAIN CONTAINER -->
+    <section class="main-container">
+
+      <!-- LEFT SIDEBAR -->
+      <div class="sidebar left-sidebar" id="leftSidebar">
+
+        <!-- Close button for mobile -->
+        <div class="d-xl-none p-2 text-end" style="background:var(--bg-primary);color:#fff;">
+          <span id="closeSidebar" style="cursor:pointer;font-size:20px;"><i class="fas fa-times"></i></span>
+        </div>
+
+        <!-- Racing Sports -->
+        <div class="sidebar-box">
+          <div class="accordion" id="racingAccordion">
+            <div class="accordion-item">
+              <div class="sidebar-title">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#racingSports">
+                  Racing Sports
+                </button>
+              </div>
+              <div id="racingSports" class="accordion-collapse collapse show" data-bs-parent="#racingAccordion">
+                <div class="accordion-body">
+                  <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-caret-right me-1"></i>Horse Racing</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-caret-right me-1"></i>Greyhound Racing</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Others -->
+        <div class="sidebar-box">
+          <div class="accordion" id="othersAccordion">
+            <div class="accordion-item">
+              <div class="sidebar-title">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#othersSports">
+                  Others
+                </button>
+              </div>
+              <div id="othersSports" class="accordion-collapse collapse show" data-bs-parent="#othersAccordion">
+                <div class="accordion-body">
+                  <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-caret-right me-1"></i><span class="blink_me">Our Casino</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-caret-right me-1"></i><span class="blink_me">Our VIP Casino</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-caret-right me-1"></i><span class="blink_me">Our Premium Casino</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-caret-right me-1"></i><span class="blink_me">Our Virtual</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-caret-right me-1"></i>Live Casino</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-caret-right me-1"></i>Slot Game</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-caret-right me-1"></i>Fantasy Game</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- All Sports -->
+        <div class="sidebar-box">
+          <div class="accordion" id="allSportsAccordion">
+            <div class="accordion-item">
+              <div class="sidebar-title">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#allSports">
+                  All Sports
+                </button>
+              </div>
+              <div id="allSports" class="accordion-collapse collapse show" data-bs-parent="#allSportsAccordion">
+                <div class="accordion-body">
+                  <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-plus-square me-1"></i>Politics</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-plus-square me-1"></i>Cricket</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-plus-square me-1"></i>Football</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-plus-square me-1"></i>Tennis</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-plus-square me-1"></i>Table Tennis</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-plus-square me-1"></i>Badminton</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-plus-square me-1"></i>Esoccer</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-plus-square me-1"></i>Basketball</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-plus-square me-1"></i>Volleyball</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-plus-square me-1"></i>Snooker</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-plus-square me-1"></i>Ice Hockey</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-plus-square me-1"></i>E Games</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-plus-square me-1"></i>Futsal</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-plus-square me-1"></i>Handball</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-plus-square me-1"></i>Kabaddi</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-plus-square me-1"></i>Golf</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-plus-square me-1"></i>Rugby League</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-plus-square me-1"></i>Boxing</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-plus-square me-1"></i>Beach Volleyball</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-plus-square me-1"></i>Mixed Martial Arts</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-plus-square me-1"></i>MotoGP</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-plus-square me-1"></i>Chess</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-plus-square me-1"></i>Cycling</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-plus-square me-1"></i>Motorbikes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-plus-square me-1"></i>Athletics</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-plus-square me-1"></i>Basketball 3X3</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-plus-square me-1"></i>Sumo</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-plus-square me-1"></i>Virtual sports</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-plus-square me-1"></i>Motor Sports</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-plus-square me-1"></i>Baseball</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-plus-square me-1"></i>Rugby Union</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-plus-square me-1"></i>Darts</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-plus-square me-1"></i>American Football</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-plus-square me-1"></i>Soccer</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-plus-square me-1"></i>Esports</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-plus-square me-1"></i>Boat Racing</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-plus-square me-1"></i>Wrestling</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- CENTER MAIN CONTAINER -->
+      <div class="center-main-container home-page">
+        <div class="center-container">
+
+          <!-- LATEST EVENTS TICKER -->
+          <div class="latest-event d-none d-xl-flex">
+            <div class="latest-events-container">
+              <div class="latest-event-item"><a class="blink_me" href="#"><i class="d-icon me-1 icon-4"></i><span>Royal Challengers Bengaluru v Luckno...</span></a></div>
+              <div class="latest-event-item"><a class="blink_me" href="#"><i class="d-icon me-1 icon-4"></i><span>Peshawar Zalmi v Quetta Gladiators</span></a></div>
+              <div class="latest-event-item"><a class="blink_me" href="#"><i class="d-icon me-1 icon-2"></i><span>S Zhang v L Noskova</span></a></div>
+              <div class="latest-event-item"><a class="blink_me" href="#"><i class="d-icon me-1 icon-2"></i><span>Ostapenko v Mir Andreeva</span></a></div>
+              <div class="latest-event-item"><a class="blink_me" href="#"><i class="d-icon me-1 icon-1"></i><span>Bayern Munich v Real Madrid</span></a></div>
+            </div>
+          </div>
+
+          <!-- MOBILE MENU TABS -->
+          <ul class="nav nav-tabs d-xl-none menu-tabs">
+            <li class="nav-item"><a class="nav-link active" href="#">Cricket</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Football</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Tennis</a></li>
+          </ul>
+
+          <!-- SPORTS TABS (nav-pills) -->
+          <ul class="nav nav-pills sports-tab">
+            <li class="nav-item"><a class="nav-link active" href="#" data-sport="cricket">Cricket</a></li>
+            <li class="nav-item"><a class="nav-link" href="#" data-sport="politics">Politics</a></li>
+            <li class="nav-item"><a class="nav-link" href="#" data-sport="football">Football</a></li>
+            <li class="nav-item"><a class="nav-link" href="#" data-sport="tennis">Tennis</a></li>
+            <li class="nav-item"><a class="nav-link" href="#" data-sport="table-tennis">Table Tennis</a></li>
+            <li class="nav-item"><a class="nav-link" href="#" data-sport="esoccer">Esoccer</a></li>
+            <li class="nav-item"><a class="nav-link" href="#" data-sport="horse-racing">Horse Racing</a></li>
+            <li class="nav-item"><a class="nav-link" href="#" data-sport="greyhound">Greyhound Racing</a></li>
+            <li class="nav-item"><a class="nav-link" href="#" data-sport="basketball">Basketball</a></li>
+            <li class="nav-item"><a class="nav-link" href="#" data-sport="wrestling">Wrestling</a></li>
+            <li class="nav-item"><a class="nav-link" href="#" data-sport="volleyball">Volleyball</a></li>
+            <li class="nav-item"><a class="nav-link" href="#" data-sport="badminton">Badminton</a></li>
+            <li class="nav-item"><a class="nav-link" href="#" data-sport="snooker">Snooker</a></li>
+            <li class="nav-item"><a class="nav-link" href="#" data-sport="darts">Darts</a></li>
+            <li class="nav-item"><a class="nav-link" href="#" data-sport="boxing">Boxing</a></li>
+          </ul>
+
+          <!-- TAB CONTENT -->
+          <div class="tab-content mt-1">
+            <div class="tab-pane active">
+
+              <!-- BETTING TABLE -->
+              <div class="bet-table">
+                <div class="bet-table-header">
+                  <div class="bet-nation-name">
+                    <span class="bet-nation-game-name" style="font-weight:bold;">Game</span>
+                  </div>
+                  <div class="bet-nation-odd">
+                    <div style="width:100%;text-align:center;font-weight:bold;font-size:13px;">1</div>
+                  </div>
+                  <div class="bet-nation-odd">
+                    <div style="width:100%;text-align:center;font-weight:bold;font-size:13px;">X</div>
+                  </div>
+                  <div class="bet-nation-odd">
+                    <div style="width:100%;text-align:center;font-weight:bold;font-size:13px;">2</div>
+                  </div>
+                </div>
+
+                <div class="bet-table-body">
+
+                  <!-- Row 1: Super Over2 -->
+                  <div class="bet-table-row">
+                    <div class="bet-nation-name">
+                      <span class="bet-nation-game-name">Super Over2</span>
+                      <div class="game-icons">
+                        <div class="game-icon"><span class="active"></span></div>
+                        <div class="game-icon"><img src="./assets/ic_fancy.webp" alt="F"></div>
+                        <div class="game-icon"><img src="./assets/ic_bm.webp" alt="BM"></div>
+                      </div>
+                    </div>
+                    <div class="bet-nation-odd">
+                      <div class="back odd-box"><span class="bet-odd">-</span></div>
+                      <div class="lay odd-box"><span class="bet-odd">-</span></div>
+                    </div>
+                    <div class="bet-nation-odd">
+                      <div class="back odd-box"><span class="bet-odd">-</span></div>
+                      <div class="lay odd-box"><span class="bet-odd">-</span></div>
+                    </div>
+                    <div class="bet-nation-odd">
+                      <div class="back odd-box"><span class="bet-odd">-</span></div>
+                      <div class="lay odd-box"><span class="bet-odd">-</span></div>
+                    </div>
+                  </div>
+
+                  <!-- Row 2: Pakistan Super League -->
+                  <div class="bet-table-row">
+                    <div class="bet-nation-name">
+                      <span class="bet-nation-game-name">Pakistan Super League / 24/03/2026 17:30:00</span>
+                      <div class="game-icons">
+                        <div class="game-icon"><span class="active"></span></div>
+                        <div class="game-icon"><img src="./assets/ic_bm.webp" alt="BM"></div>
+                      </div>
+                    </div>
+                    <div class="bet-nation-odd">
+                      <div class="back odd-box"><span class="bet-odd">-</span></div>
+                      <div class="lay odd-box"><span class="bet-odd">-</span></div>
+                    </div>
+                    <div class="bet-nation-odd">
+                      <div class="back odd-box"><span class="bet-odd">-</span></div>
+                      <div class="lay odd-box"><span class="bet-odd">-</span></div>
+                    </div>
+                    <div class="bet-nation-odd">
+                      <div class="back odd-box"><span class="bet-odd">-</span></div>
+                      <div class="lay odd-box"><span class="bet-odd">-</span></div>
+                    </div>
+                  </div>
+
+                  <!-- Row 3: Indian Premier League -->
+                  <div class="bet-table-row">
+                    <div class="bet-nation-name">
+                      <span class="bet-nation-game-name">Indian Premier League / 28/03/2026 19:30:00</span>
+                      <div class="game-icons">
+                        <div class="game-icon"><span class="active"></span></div>
+                        <div class="game-icon"><img src="./assets/ic_fancy.webp" alt="F"></div>
+                        <div class="game-icon"><img src="./assets/ic_bm.webp" alt="BM"></div>
+                      </div>
+                    </div>
+                    <div class="bet-nation-odd">
+                      <div class="back odd-box"><span class="bet-odd">-</span></div>
+                      <div class="lay odd-box"><span class="bet-odd">-</span></div>
+                    </div>
+                    <div class="bet-nation-odd">
+                      <div class="back odd-box"><span class="bet-odd">-</span></div>
+                      <div class="lay odd-box"><span class="bet-odd">-</span></div>
+                    </div>
+                    <div class="bet-nation-odd">
+                      <div class="back odd-box"><span class="bet-odd">-</span></div>
+                      <div class="lay odd-box"><span class="bet-odd">-</span></div>
+                    </div>
+                  </div>
+
+                  <!-- Row 4: RCB v LSG -->
+                  <div class="bet-table-row">
+                    <div class="bet-nation-name">
+                      <span class="bet-nation-game-name">Royal Challengers Bengaluru v Lucknow Super Giants / 15/04/2026 19:30:00</span>
+                      <div class="game-icons">
+                        <div class="game-icon"><span class="active"></span></div>
+                        <div class="game-icon"><img src="./assets/ic_fancy.webp" alt="F"></div>
+                        <div class="game-icon"><img src="./assets/ic_bm.webp" alt="BM"></div>
+                        <div class="game-icon"><i class="fas fa-tv icon-tv"></i></div>
+                      </div>
+                    </div>
+                    <div class="bet-nation-odd">
+                      <div class="back odd-box"><span class="bet-odd">1.02</span></div>
+                      <div class="lay odd-box"><span class="bet-odd">1.03</span></div>
+                    </div>
+                    <div class="bet-nation-odd">
+                      <div class="back odd-box"><span class="bet-odd">-</span></div>
+                      <div class="lay odd-box"><span class="bet-odd">-</span></div>
+                    </div>
+                    <div class="bet-nation-odd">
+                      <div class="back odd-box"><span class="bet-odd">38</span></div>
+                      <div class="lay odd-box"><span class="bet-odd">42</span></div>
+                    </div>
+                  </div>
+
+                  <!-- Row 5: Peshawar Zalmi v Quetta -->
+                  <div class="bet-table-row">
+                    <div class="bet-nation-name">
+                      <span class="bet-nation-game-name">Peshawar Zalmi v Quetta Gladiators / 15/04/2026 19:30:00</span>
+                      <div class="game-icons">
+                        <div class="game-icon"><span class="active"></span></div>
+                        <div class="game-icon"><img src="./assets/ic_fancy.webp" alt="F"></div>
+                        <div class="game-icon"><img src="./assets/ic_bm.webp" alt="BM"></div>
+                        <div class="game-icon"><i class="fas fa-tv icon-tv"></i></div>
+                      </div>
+                    </div>
+                    <div class="bet-nation-odd">
+                      <div class="back odd-box"><span class="bet-odd">1.04</span></div>
+                      <div class="lay odd-box"><span class="bet-odd">1.05</span></div>
+                    </div>
+                    <div class="bet-nation-odd">
+                      <div class="back odd-box"><span class="bet-odd">-</span></div>
+                      <div class="lay odd-box"><span class="bet-odd">-</span></div>
+                    </div>
+                    <div class="bet-nation-odd">
+                      <div class="back odd-box"><span class="bet-odd">24</span></div>
+                      <div class="lay odd-box"><span class="bet-odd">25</span></div>
+                    </div>
+                  </div>
+
+                  <!-- Row 6: TKR XI v BT XI -->
+                  <div class="bet-table-row">
+                    <div class="bet-nation-name">
+                      <span class="bet-nation-game-name">TKR XI v BT XI / 15/04/2026 21:40:00</span>
+                      <div class="game-icons">
+                        <div class="game-icon"><span class="active"></span></div>
+                        <div class="game-icon"><img src="./assets/ic_fancy.webp" alt="F"></div>
+                        <div class="game-icon"><img src="./assets/ic_bm.webp" alt="BM"></div>
+                        <div class="game-icon"><img src="./assets/ic_vir.webp" alt="VIR"></div>
+                      </div>
+                    </div>
+                    <div class="bet-nation-odd">
+                      <div class="back odd-box"><span class="bet-odd">-</span></div>
+                      <div class="lay odd-box"><span class="bet-odd">-</span></div>
+                    </div>
+                    <div class="bet-nation-odd">
+                      <div class="back odd-box"><span class="bet-odd">-</span></div>
+                      <div class="lay odd-box"><span class="bet-odd">-</span></div>
+                    </div>
+                    <div class="bet-nation-odd">
+                      <div class="back odd-box"><span class="bet-odd">-</span></div>
+                      <div class="lay odd-box"><span class="bet-odd">-</span></div>
+                    </div>
+                  </div>
+
+                  <!-- Row 7: Brisbane Heat XI v Sydney Sixers XI -->
+                  <div class="bet-table-row">
+                    <div class="bet-nation-name">
+                      <span class="bet-nation-game-name">Brisbane Heat XI v Sydney Sixers XI / 15/04/2026 21:50:00</span>
+                      <div class="game-icons">
+                        <div class="game-icon"><span class="active"></span></div>
+                        <div class="game-icon"><img src="./assets/ic_fancy.webp" alt="F"></div>
+                        <div class="game-icon"><img src="./assets/ic_vir.webp" alt="VIR"></div>
+                      </div>
+                    </div>
+                    <div class="bet-nation-odd">
+                      <div class="back odd-box"><span class="bet-odd">-</span></div>
+                      <div class="lay odd-box"><span class="bet-odd">-</span></div>
+                    </div>
+                    <div class="bet-nation-odd">
+                      <div class="back odd-box"><span class="bet-odd">-</span></div>
+                      <div class="lay odd-box"><span class="bet-odd">-</span></div>
+                    </div>
+                    <div class="bet-nation-odd">
+                      <div class="back odd-box"><span class="bet-odd">-</span></div>
+                      <div class="lay odd-box"><span class="bet-odd">-</span></div>
+                    </div>
+                  </div>
+
+                  <!-- Row 8: Afghanistan T10 v Pakistan T10 -->
+                  <div class="bet-table-row">
+                    <div class="bet-nation-name">
+                      <span class="bet-nation-game-name">Afghanistan T10 v Pakistan T10 / 15/04/2026 22:25:00</span>
+                      <div class="game-icons">
+                        <div class="game-icon"><span class="active"></span></div>
+                        <div class="game-icon"><img src="./assets/ic_fancy.webp" alt="F"></div>
+                        <div class="game-icon"><i class="fas fa-tv icon-tv"></i></div>
+                      </div>
+                    </div>
+                    <div class="bet-nation-odd">
+                      <div class="back odd-box"><span class="bet-odd">-</span></div>
+                      <div class="lay odd-box"><span class="bet-odd">-</span></div>
+                    </div>
+                    <div class="bet-nation-odd">
+                      <div class="back odd-box"><span class="bet-odd">-</span></div>
+                      <div class="lay odd-box"><span class="bet-odd">-</span></div>
+                    </div>
+                    <div class="bet-nation-odd">
+                      <div class="back odd-box"><span class="bet-odd">-</span></div>
+                      <div class="lay odd-box"><span class="bet-odd">-</span></div>
+                    </div>
+                  </div>
+
+                  <!-- Row 9: New Zealand T10 v Pakistan T10 -->
+                  <div class="bet-table-row">
+                    <div class="bet-nation-name">
+                      <span class="bet-nation-game-name">New Zealand T10 v Pakistan T10 / 15/04/2026 23:30:00</span>
+                      <div class="game-icons">
+                        <div class="game-icon"><img src="./assets/ic_fancy.webp" alt="F"></div>
+                        <div class="game-icon"><img src="./assets/ic_bm.webp" alt="BM"></div>
+                      </div>
+                    </div>
+                    <div class="bet-nation-odd">
+                      <div class="back odd-box"><span class="bet-odd">-</span></div>
+                      <div class="lay odd-box"><span class="bet-odd">-</span></div>
+                    </div>
+                    <div class="bet-nation-odd">
+                      <div class="back odd-box"><span class="bet-odd">-</span></div>
+                      <div class="lay odd-box"><span class="bet-odd">-</span></div>
+                    </div>
+                    <div class="bet-nation-odd">
+                      <div class="back odd-box"><span class="bet-odd">-</span></div>
+                      <div class="lay odd-box"><span class="bet-odd">-</span></div>
+                    </div>
+                  </div>
+
+                  <!-- Row 10: Hyderabad Kingsmen v Rawalpindi Pindiz -->
+                  <div class="bet-table-row">
+                    <div class="bet-nation-name">
+                      <span class="bet-nation-game-name">Hyderabad Kingsmen v Rawalpindi Pindiz / 16/04/2026 15:00:00</span>
+                      <div class="game-icons">
+                        <div class="game-icon"><img src="./assets/ic_fancy.webp" alt="F"></div>
+                      </div>
+                    </div>
+                    <div class="bet-nation-odd">
+                      <div class="back odd-box"><span class="bet-odd">1.8</span></div>
+                      <div class="lay odd-box"><span class="bet-odd">1.82</span></div>
+                    </div>
+                    <div class="bet-nation-odd">
+                      <div class="back odd-box"><span class="bet-odd">-</span></div>
+                      <div class="lay odd-box"><span class="bet-odd">-</span></div>
+                    </div>
+                    <div class="bet-nation-odd">
+                      <div class="back odd-box"><span class="bet-odd">2.22</span></div>
+                      <div class="lay odd-box"><span class="bet-odd">2.26</span></div>
+                    </div>
+                  </div>
+
+                  <!-- Row 11: Mumbai Indians v Punjab Kings -->
+                  <div class="bet-table-row">
+                    <div class="bet-nation-name">
+                      <span class="bet-nation-game-name">Mumbai Indians v Punjab Kings / 16/04/2026 19:30:00</span>
+                      <div class="game-icons">
+                        <div class="game-icon"><img src="./assets/ic_fancy.webp" alt="F"></div>
+                        <div class="game-icon"><img src="./assets/ic_bm.webp" alt="BM"></div>
+                      </div>
+                    </div>
+                    <div class="bet-nation-odd">
+                      <div class="back odd-box"><span class="bet-odd">1.81</span></div>
+                      <div class="lay odd-box"><span class="bet-odd">1.82</span></div>
+                    </div>
+                    <div class="bet-nation-odd">
+                      <div class="back odd-box"><span class="bet-odd">-</span></div>
+                      <div class="lay odd-box"><span class="bet-odd">-</span></div>
+                    </div>
+                    <div class="bet-nation-odd">
+                      <div class="back odd-box"><span class="bet-odd">2.2</span></div>
+                      <div class="lay odd-box"><span class="bet-odd">2.24</span></div>
+                    </div>
+                  </div>
+
+                  <!-- Row 12: Karachi Kings v Islamabad United -->
+                  <div class="bet-table-row">
+                    <div class="bet-nation-name">
+                      <span class="bet-nation-game-name">Karachi Kings v Islamabad United / 16/04/2026 20:30:00</span>
+                      <div class="game-icons">
+                        <div class="game-icon"><img src="./assets/ic_fancy.webp" alt="F"></div>
+                      </div>
+                    </div>
+                    <div class="bet-nation-odd">
+                      <div class="back odd-box"><span class="bet-odd">2</span></div>
+                      <div class="lay odd-box"><span class="bet-odd">2.2</span></div>
+                    </div>
+                    <div class="bet-nation-odd">
+                      <div class="back odd-box"><span class="bet-odd">-</span></div>
+                      <div class="lay odd-box"><span class="bet-odd">-</span></div>
+                    </div>
+                    <div class="bet-nation-odd">
+                      <div class="back odd-box"><span class="bet-odd">1.84</span></div>
+                      <div class="lay odd-box"><span class="bet-odd">2</span></div>
+                    </div>
+                  </div>
+
+                  <!-- Row 13: Bangladesh v New Zealand -->
+                  <div class="bet-table-row">
+                    <div class="bet-nation-name">
+                      <span class="bet-nation-game-name">Bangladesh v New Zealand / 17/04/2026 10:30:00</span>
+                      <div class="game-icons">
+                      </div>
+                    </div>
+                    <div class="bet-nation-odd">
+                      <div class="back odd-box"><span class="bet-odd">1.62</span></div>
+                      <div class="lay odd-box"><span class="bet-odd">1.69</span></div>
+                    </div>
+                    <div class="bet-nation-odd">
+                      <div class="back odd-box"><span class="bet-odd">-</span></div>
+                      <div class="lay odd-box"><span class="bet-odd">-</span></div>
+                    </div>
+                    <div class="bet-nation-odd">
+                      <div class="back odd-box"><span class="bet-odd">2.44</span></div>
+                      <div class="lay odd-box"><span class="bet-odd">2.62</span></div>
+                    </div>
+                  </div>
+
+                  <!-- Row 14: Gujarat Titans v KKR -->
+                  <div class="bet-table-row">
+                    <div class="bet-nation-name">
+                      <span class="bet-nation-game-name">Gujarat Titans v Kolkata Knight Riders / 17/04/2026 19:30:00</span>
+                      <div class="game-icons">
+                        <div class="game-icon"><img src="./assets/ic_fancy.webp" alt="F"></div>
+                      </div>
+                    </div>
+                    <div class="bet-nation-odd">
+                      <div class="back odd-box"><span class="bet-odd">1.59</span></div>
+                      <div class="lay odd-box"><span class="bet-odd">1.68</span></div>
+                    </div>
+                    <div class="bet-nation-odd">
+                      <div class="back odd-box"><span class="bet-odd">-</span></div>
+                      <div class="lay odd-box"><span class="bet-odd">-</span></div>
+                    </div>
+                    <div class="bet-nation-odd">
+                      <div class="back odd-box"><span class="bet-odd">2.48</span></div>
+                      <div class="lay odd-box"><span class="bet-odd">2.7</span></div>
+                    </div>
+                  </div>
+
+                  <!-- Row 15: South Africa W v India W -->
+                  <div class="bet-table-row">
+                    <div class="bet-nation-name">
+                      <span class="bet-nation-game-name">South Africa W v India W / 17/04/2026 21:30:00</span>
+                      <div class="game-icons">
+                      </div>
+                    </div>
+                    <div class="bet-nation-odd">
+                      <div class="back odd-box"><span class="bet-odd">2.5</span></div>
+                      <div class="lay odd-box"><span class="bet-odd">2.8</span></div>
+                    </div>
+                    <div class="bet-nation-odd">
+                      <div class="back odd-box"><span class="bet-odd">-</span></div>
+                      <div class="lay odd-box"><span class="bet-odd">-</span></div>
+                    </div>
+                    <div class="bet-nation-odd">
+                      <div class="back odd-box"><span class="bet-odd">1.56</span></div>
+                      <div class="lay odd-box"><span class="bet-odd">1.67</span></div>
+                    </div>
+                  </div>
+
+                  <!-- Row 16: SRH v CSK -->
+                  <div class="bet-table-row">
+                    <div class="bet-nation-name">
+                      <span class="bet-nation-game-name">Sunrisers Hyderabad v Chennai Super Kings / 18/04/2026 19:30:00</span>
+                      <div class="game-icons">
+                      </div>
+                    </div>
+                    <div class="bet-nation-odd">
+                      <div class="back odd-box"><span class="bet-odd">1.77</span></div>
+                      <div class="lay odd-box"><span class="bet-odd">1.91</span></div>
+                    </div>
+                    <div class="bet-nation-odd">
+                      <div class="back odd-box"><span class="bet-odd">-</span></div>
+                      <div class="lay odd-box"><span class="bet-odd">-</span></div>
+                    </div>
+                    <div class="bet-nation-odd">
+                      <div class="back odd-box"><span class="bet-odd">2.1</span></div>
+                      <div class="lay odd-box"><span class="bet-odd">2.3</span></div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+              <!-- CASINO LIST (real CDN images) -->
+              <div class="casino-list mt-2" id="casinoList">
+                <!-- Casino items rendered by JS below -->
+              </div>
+              <!-- old static cards removed, rendered by JS now -->
+
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+    <!-- FOOTER: Crimson bar -->
+    <section class="footer">
+      <div class="footer-top">
+        <div class="footer-links">
+          <nav class="navbar navbar-expand-sm" style="padding:0;">
+            <ul class="navbar-nav" style="flex-direction:row;">
+              <li class="nav-item"><a class="nav-link" href="#" target="_blank">Terms and Conditions</a></li>
+              <li class="nav-item"><a class="nav-link" href="#" target="_blank">Responsible Gaming</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="support-detail">
+          <h1>24X7 Support</h1>
+        </div>
+        <div class="social-icons-box">
+          <div class="social-icon"><a href="#" target="_blank"><img src="./assets/whatsapp1.png" alt="WhatsApp"></a></div>
+        </div>
+      </div>
+    </section>
+    <!-- FOOTER: White SSL + badges row -->
+    <div class="my22-footer-bottom-section">
+      <div class="ssl-info">
+        <img src="./assets/ssl.png" alt="SSL Secure">
+        <div><strong>100% SAFE</strong><br>Protected connection and encrypted data.</div>
+      </div>
+      <div class="cert-icons">
+        <img src="./assets/18plus.png" alt="18+">
+        <img src="./assets/gamecare.png" alt="GamCare">
+        <img src="./assets/gt.png" alt="GT">
+      </div>
+    </div>
+    <!-- FOOTER: Welcome + Copyright -->
+    <div class="my22-footer-copyright">
+      <h5>🪷𝐖𝐄𝐋𝐂𝐎𝐌𝐄 𝐓𝐎 SHRI SHYAM ONLINE BOOK🪷</h5>
+      <h6>&copy; Copyright 2026. All Rights Reserved. Powered by OTT777.</h6>
+    </div>
+
+    <!-- (WhatsApp is handled by #floater at top) -->
+
+  </div>
+</div>
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<!-- Bootstrap 5 Bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+$(document).ready(function() {
+  // Mobile sidebar toggle
+  $('#sidebarToggle').on('click', function(e) {
+    e.preventDefault();
+    $('#leftSidebar').addClass('visible');
+    $('#sidebarOverlay').addClass('active');
+  });
+
+  $('#closeSidebar, #sidebarOverlay').on('click', function() {
+    $('#leftSidebar').removeClass('visible');
+    $('#sidebarOverlay').removeClass('active');
+  });
+
+  // Sports tab switching
+  $('.sports-tab .nav-link').on('click', function(e) {
+    e.preventDefault();
+    $('.sports-tab .nav-link').removeClass('active');
+    $(this).addClass('active');
+  });
+
+  // Mobile menu tabs switching
+  $('.menu-tabs .nav-link').on('click', function(e) {
+    e.preventDefault();
+    $('.menu-tabs .nav-link').removeClass('active');
+    $(this).addClass('active');
+  });
+
+  // Render casino cards with real CDN images
+  var CDN = 'https://dataobj.ecoassetsservice.com/casino-icons/';
+  var DEF = CDN + 'default.jpg';
+  var casinoGames = [
+    ['Matka', 'lc/worli3.gif'],
+    ['V VIP Teenpatti 1-day', 'lc/teen62.gif'],
+    ['Dolidana', 'lc/dolidana.gif'],
+    ['Mogambo', 'lc/mogambo.gif'],
+    ['20-20 Teenpatti VIP1', 'lc/teen20v1.jpg'],
+    ['Lucky 6', 'lc/lucky5.jpg'],
+    ['Beach Roulette', 'lc/roulette12.jpg'],
+    ['Roulette', 'lc/roulette13.jpg'],
+    ['Golden Roulette', 'lc/roulette11.jpg'],
+    ['Teenpatti Poison One Day', 'lc/poison.jpg'],
+    ['Unique Teenpatti', 'lc/teenunique.jpg'],
+    ['Teenpatti Poison 20-20', 'lc/poison20.jpg'],
+    ['Unlimited Joker 20-20', 'lc/joker120.jpg'],
+    ['Teenpatti Joker 20-20', 'lc/joker20.jpg'],
+    ['Unlimited Joker Oneday', 'lc/joker1.jpg'],
+    ['20-20 Teenpatti C', 'lc/teen20c.jpg'],
+    ['Bollywood Casino 2', 'lc/btable2.jpg'],
+    ['Unique Roulette', 'lc/ourroullete.jpg'],
+    ['Mini Superover', 'lc/superover3.jpg'],
+    ['Goal', 'lc/goal.jpg'],
+    ['ANDAR BAHAR 150 cards', 'lc/ab4.jpg'],
+    ['Lucky 15', 'lc/lucky15.jpg'],
+    ['Super Over2', 'lc/superover2.jpg'],
+    ['Queen Top Open Teenpatti', 'lc/teen41.jpg'],
+    ['Jack Top Open Teenpatti', 'lc/teen42.jpg'],
+    ['Sic Bo2', 'lc/sicbo2.jpg'],
+    ['Instant Teenpatti 3.0', 'lc/teen33.jpg'],
+    ['Sic Bo', 'lc/sicbo.jpg'],
+    ['Ball by Ball', 'lc/ballbyball.jpg'],
+    ['Instant Teenpatti 2.0', 'lc/teen32.jpg'],
+    ['Teenpatti 1-day', 'lc/teen.jpg'],
+    ['20-20 Teenpatti', 'lc/teen20.jpg'],
+    ['Teenpatti Test', 'lc/teen9.jpg'],
+    ['Teenpatti Open', 'lc/teen8.jpg'],
+    ['Poker 1-Day', 'lc/poker.jpg'],
+    ['20-20 Poker', 'lc/poker20.jpg'],
+    ['Poker 6 Players', 'lc/poker6.jpg'],
+    ['Baccarat', 'lc/baccarat.jpg'],
+    ['Baccarat 2', 'lc/baccarat2.jpg'],
+    ['20-20 Dragon Tiger', 'lc/dt20.jpg'],
+    ['1 Day Dragon Tiger', 'lc/dt6.jpg'],
+    ['20-20 D T L', 'lc/dtl20.jpg'],
+    ['20-20 Dragon Tiger 2', 'lc/dt202.jpg'],
+    ['32 Cards A', 'lc/card32.jpg'],
+    ['32 Cards B', 'lc/card32eu.jpg'],
+    ['Andar Bahar', 'lc/ab20.jpg'],
+    ['Andar Bahar 2', 'lc/abj.jpg'],
+    ['Lucky 7 - A', 'lc/lucky7.jpg'],
+    ['Lucky 7 - B', 'lc/lucky7eu.jpg'],
+    ['3 Cards Judgement', 'lc/3cardj.jpg'],
+    ['Casino War', 'lc/war.jpg'],
+    ['Worli Matka', 'lc/worli.jpg'],
+    ['Instant Worli', 'lc/worli2.jpg'],
+    ['Amar Akbar Anthony', 'lc/aaa.jpg'],
+    ['Bollywood Casino', 'lc/btable.jpg'],
+    ['Lottery', 'lc/lottcard.jpg'],
+    ['5Five Cricket', 'lc/cricketv3.jpg'],
+    ['Cricket Match 20-20', 'lc/cmatch20.jpg'],
+    ['Casino Meter', 'lc/cmeter.jpg'],
+    ['Teenpatti - 2.0', 'lc/teen6.jpg'],
+    ['Queen', 'lc/queen.jpg'],
+    ['Race20', 'lc/race20.jpg'],
+    ['Lucky 7 - C', 'lc/lucky7eu2.jpg'],
+    ['Super Over', 'lc/superover.jpg'],
+    ['The Trap', 'lc/trap.jpg'],
+    ['2 Cards Teenpatti', 'lc/patti2.jpg'],
+    ['29Card Baccarat', 'lc/teensin.jpg'],
+    ['Muflis Teenpatti', 'lc/teenmuf.jpg'],
+    ['Race To 17', 'lc/race17.jpg'],
+    ['20-20 Teenpatti B', 'lc/teen20b.jpg'],
+    ['Trio', 'lc/trio.jpg'],
+    ['Note Number', 'lc/notenum.jpg'],
+    ['1 CARD 20-20', 'lc/teen120.jpg'],
+    ['1 CARD ONE-DAY', 'lc/teen1.jpg'],
+    ['ANDAR BAHAR 50 cards', 'lc/ab3.jpg'],
+    ['Amar Akbar Anthony 2', 'lc/aaa2.jpg'],
+    ['Race to 2nd', 'lc/race2.jpg'],
+    ['Instant Teenpatti', 'lc/teen3.jpg'],
+    ['Dus ka Dum', 'lc/dum10.jpg'],
+    ['1 Card Meter', 'lc/cmeter1.jpg']
+  ];
+
+  var casinoHtml = '';
+  for (var i = 0; i < casinoGames.length; i++) {
+    var g = casinoGames[i];
+    var imgUrl = CDN + g[1];
+    casinoHtml += '<div class="casino-list-item"><a>' +
+      '<div class="casino-list-item-banner" style="background-image: url(\'' + imgUrl + '\'), url(\'' + DEF + '\');"></div>' +
+      '<div class="casino-list-name">' + g[0] + '</div></a></div>';
+  }
+  $('#casinoList').html(casinoHtml);
+});
+</script>
+</body>
+</html>

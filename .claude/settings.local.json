@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:ott777.club)",
+      "Bash(curl -s -L -A \"Mozilla/5.0 \\(Windows NT 10.0; Win64; x64\\) AppleWebKit/537.36 \\(KHTML, like Gecko\\) Chrome/120.0.0.0 Safari/537.36\" https://ott777.club/)",
+      "WebFetch(domain:web.archive.org)",
+      "WebFetch(domain:webcache.googleusercontent.com)",
+      "Bash(node:*)",
+      "Bash(curl -s -o /c/MERN/freelance/ott777/assets/dfont.woff \"https://versionobj.ecoassetsservice.com/v98/static/front/fonts/dfont.woff\" -A \"Mozilla/5.0\" -L --max-time 10)"
+    ]
+  }
+}
